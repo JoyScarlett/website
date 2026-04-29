@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 设计系统演示</title>
+    <!-- 引入设计系统 -->
+    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="utilities.css">
+</head>
+<body>
+    <!-- 导航栏示例 -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">
+                <span>🐔</span>
+                <span class="gradient-text">小鸡AI</span>
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="#" class="navbar-link">首页</a></li>
+                <li><a href="#" class="navbar-link">功能</a></li>
+                <li><a href="#" class="navbar-link">案例</a></li>
+                <li><a href="#" class="navbar-link">关于</a></li>
+            </ul>
+            <button class="btn btn-primary">免费试用</button>
+        </div>
+    </nav>
+
+    <!-- Hero区示例 -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">智能营销</span><br>
+                    让增长更简单
+                </h1>
+                <p class="hero-subtitle">
+                    AI驱动的营销自动化系统，帮助企业降低获客成本，提升转化效率
+                </p>
+                <div class="btn-group">
+                    <button class="btn btn-gradient btn-lg">立即开始</button>
+                    <button class="btn btn-outline btn-lg">观看演示</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="text-6xl animate-float">🤖</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 卡片网格示例 -->
+    <section class="container py-20">
+        <h2 class="text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">核心功能</span>
+        </h2>
+        
+        <div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-1 gap-6">
+            <div class="card">
+                <div class="text-5xl mb-4">⚡</div>
+                <h3 class="card-title">自动化营销</h3>
+                <p class="card-body">
+                    AI自动生成营销内容，多渠道智能投放，节省80%人力成本
+                </p>
+            </div>
+            
+            <div class="card">
+                <div class="text-5xl mb-4">🎯</div>
+                <h3 class="card-title">精准投放</h3>
+                <p class="card-body">
+                    智能分析用户画像，精准定位目标客户，提升3倍转化率
+                </p>
+            </div>
+            
+            <div class="card">
+                <div class="text-5xl mb-4">📊</div>
+                <h3 class="card-title">数据分析</h3>
+                <p class="card-body">
+                    实时追踪营销效果，智能优化投放策略，ROI提升200%
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 按钮示例 -->
+    <section class="container py-20">
+        <h2 class="text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">按钮组件</span>
+        </h2>
+        
+        <div class="flex flex-col gap-6 items-center">
+            <div class="flex gap-4">
+                <button class="btn btn-primary">主要按钮</button>
+                <button class="btn btn-secondary">次要按钮</button>
+                <button class="btn btn-outline">边框按钮</button>
+                <button class="btn btn-ghost">幽灵按钮</button>
+            </div>
+            
+            <div class="flex gap-4">
+                <button class="btn btn-gradient btn-sm">小按钮</button>
+                <button class="btn btn-gradient btn-md">中按钮</button>
+                <button class="btn btn-gradient btn-lg">大按钮</button>
+                <button class="btn btn-gradient btn-xl">超大按钮</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 徽章示例 -->
+    <section class="container py-20">
+        <h2 class="text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">徽章组件</span>
+        </h2>
+        
+        <div class="flex gap-4 justify-center">
+            <span class="badge badge-primary">主要</span>
+            <span class="badge badge-secondary">次要</span>
+            <span class="badge badge-success">成功</span>
+            <span class="badge badge-warning">警告</span>
+            <span class="badge badge-error">错误</span>
+        </div>
+    </section>
+
+    <!-- 表单示例 -->
+    <section class="container py-20">
+        <h2 class="text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">表单组件</span>
+        </h2>
+        
+        <div class="max-w-md mx-auto glass rounded-2xl p-8">
+            <div class="form-group">
+                <label class="form-label">姓名</label>
+                <input type="text" class="form-input" placeholder="请输入姓名">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">邮箱</label>
+                <input type="email" class="form-input" placeholder="请输入邮箱">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">留言</label>
+                <textarea class="form-textarea" placeholder="请输入留言"></textarea>
+            </div>
+            
+            <button class="btn btn-gradient w-full">提交</button>
+        </div>
+    </section>
+
+    <!-- 工具类示例 -->
+    <section class="container py-20">
+        <h2 class="text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">工具类示例</span>
+        </h2>
+        
+        <div class="grid grid-cols-2 gap-6">
+            <div class="glass rounded-xl p-6">
+                <h3 class="text-xl font-bold mb-4">文字样式</h3>
+                <p class="text-xs mb-2">超小文字 (xs)</p>
+                <p class="text-sm mb-2">小文字 (sm)</p>
+                <p class="text-base mb-2">基础文字 (base)</p>
+                <p class="text-lg mb-2">大文字 (lg)</p>
+                <p class="text-xl mb-2">超大文字 (xl)</p>
+            </div>
+            
+            <div class="glass rounded-xl p-6">
+                <h3 class="text-xl font-bold mb-4">颜色样式</h3>
+                <p class="text-primary mb-2">主要文字</p>
+                <p class="text-secondary mb-2">次要文字</p>
+                <p class="text-success mb-2">成功文字</p>
+                <p class="text-warning mb-2">警告文字</p>
+                <p class="text-error mb-2">错误文字</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 加载动画示例 -->
+    <section class="container py-20">
+        <h2 class="text-4xl font-bold text-center mb-12">
+            <span class="gradient-text">加载动画</span>
+        </h2>
+        
+        <div class="flex gap-8 justify-center items-center">
+            <div class="spinner spinner-sm"></div>
+            <div class="spinner"></div>
+            <div class="spinner spinner-lg"></div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="container py-12 text-center border-t">
+        <p class="text-secondary">© 2024 小鸡AI营销系统 | 设计系统演示</p>
+    </footer>
+</body>
+</html>
