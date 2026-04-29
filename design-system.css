@@ -1,0 +1,491 @@
+/* 🎯 小鸡AI营销系统 - 设计系统 */
+/* 第8步：统一样式系统 */
+
+/* ============================================
+   1. CSS变量 - 颜色系统
+   ============================================ */
+:root {
+    /* 主色调 */
+    --color-primary: #00ff88;
+    --color-primary-light: #33ffaa;
+    --color-primary-dark: #00cc6a;
+    --color-primary-rgb: 0, 255, 136;
+    
+    --color-secondary: #00d4ff;
+    --color-secondary-light: #33ddff;
+    --color-secondary-dark: #00a8cc;
+    --color-secondary-rgb: 0, 212, 255;
+    
+    /* 背景色 */
+    --color-bg-primary: #0a0e27;
+    --color-bg-secondary: #050814;
+    --color-bg-tertiary: #1a1f3a;
+    --color-bg-card: rgba(15, 23, 42, 0.6);
+    --color-bg-card-hover: rgba(15, 23, 42, 0.8);
+    
+    /* 文字色 */
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #94a3b8;
+    --color-text-tertiary: #64748b;
+    --color-text-disabled: #475569;
+    
+    /* 边框色 */
+    --color-border-primary: rgba(255, 255, 255, 0.1);
+    --color-border-secondary: rgba(255, 255, 255, 0.05);
+    --color-border-focus: var(--color-primary);
+    
+    /* 状态色 */
+    --color-success: #00ff88;
+    --color-warning: #ffd93d;
+    --color-error: #ff4444;
+    --color-info: #00d4ff;
+    
+    /* 渐变 */
+    --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    --gradient-primary-hover: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+    --gradient-dark: linear-gradient(180deg, var(--color-bg-primary), var(--color-bg-secondary));
+    --gradient-card: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(10, 14, 39, 0.8));
+    
+    /* 阴影 */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+    
+    --shadow-glow-primary: 0 0 20px rgba(var(--color-primary-rgb), 0.5);
+    --shadow-glow-secondary: 0 0 20px rgba(var(--color-secondary-rgb), 0.5);
+    --shadow-glow-primary-lg: 0 0 40px rgba(var(--color-primary-rgb), 0.6);
+    --shadow-glow-secondary-lg: 0 0 40px rgba(var(--color-secondary-rgb), 0.6);
+}
+
+/* ============================================
+   2. CSS变量 - 字体系统
+   ============================================ */
+:root {
+    /* 字体家族 */
+    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    
+    /* 字体大小 */
+    --font-size-xs: 0.75rem;      /* 12px */
+    --font-size-sm: 0.875rem;     /* 14px */
+    --font-size-base: 1rem;       /* 16px */
+    --font-size-lg: 1.125rem;     /* 18px */
+    --font-size-xl: 1.25rem;      /* 20px */
+    --font-size-2xl: 1.5rem;      /* 24px */
+    --font-size-3xl: 1.875rem;    /* 30px */
+    --font-size-4xl: 2.25rem;     /* 36px */
+    --font-size-5xl: 3rem;        /* 48px */
+    --font-size-6xl: 3.75rem;     /* 60px */
+    --font-size-7xl: 4.5rem;      /* 72px */
+    
+    /* 字重 */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+    
+    /* 行高 */
+    --line-height-tight: 1.2;
+    --line-height-snug: 1.4;
+    --line-height-normal: 1.6;
+    --line-height-relaxed: 1.8;
+    --line-height-loose: 2;
+}
+
+/* ============================================
+   3. CSS变量 - 间距系统
+   ============================================ */
+:root {
+    /* 间距 */
+    --spacing-0: 0;
+    --spacing-1: 0.25rem;   /* 4px */
+    --spacing-2: 0.5rem;    /* 8px */
+    --spacing-3: 0.75rem;   /* 12px */
+    --spacing-4: 1rem;      /* 16px */
+    --spacing-5: 1.25rem;   /* 20px */
+    --spacing-6: 1.5rem;    /* 24px */
+    --spacing-8: 2rem;      /* 32px */
+    --spacing-10: 2.5rem;   /* 40px */
+    --spacing-12: 3rem;     /* 48px */
+    --spacing-16: 4rem;     /* 64px */
+    --spacing-20: 5rem;     /* 80px */
+    --spacing-24: 6rem;     /* 96px */
+    --spacing-32: 8rem;     /* 128px */
+    
+    /* 圆角 */
+    --radius-none: 0;
+    --radius-sm: 0.25rem;   /* 4px */
+    --radius-base: 0.5rem;  /* 8px */
+    --radius-md: 0.75rem;   /* 12px */
+    --radius-lg: 1rem;      /* 16px */
+    --radius-xl: 1.25rem;   /* 20px */
+    --radius-2xl: 1.5rem;   /* 24px */
+    --radius-full: 9999px;
+    
+    /* 容器宽度 */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1400px;
+    --container-3xl: 1600px;
+    
+    /* 断点 */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+}
+
+/* ============================================
+   4. CSS变量 - 动画系统
+   ============================================ */
+:root {
+    /* 过渡时间 */
+    --transition-fast: 150ms;
+    --transition-base: 300ms;
+    --transition-slow: 500ms;
+    
+    /* 缓动函数 */
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Z-index层级 */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+}
+
+/* ============================================
+   5. 全局重置
+   ============================================ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    background: var(--gradient-dark);
+    overflow-x: hidden;
+}
+
+/* ============================================
+   6. 毛玻璃效果
+   ============================================ */
+.glass {
+    background: var(--color-bg-card);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--color-border-primary);
+}
+
+.glass-strong {
+    background: var(--color-bg-card-hover);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--color-border-primary);
+}
+
+.glass-light {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid var(--color-border-secondary);
+}
+
+/* ============================================
+   7. 渐变效果
+   ============================================ */
+.gradient-primary {
+    background: var(--gradient-primary);
+}
+
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-border {
+    position: relative;
+    background: var(--color-bg-card);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* ============================================
+   8. 阴影效果
+   ============================================ */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+
+.shadow-glow-primary { box-shadow: var(--shadow-glow-primary); }
+.shadow-glow-secondary { box-shadow: var(--shadow-glow-secondary); }
+.shadow-glow-primary-lg { box-shadow: var(--shadow-glow-primary-lg); }
+.shadow-glow-secondary-lg { box-shadow: var(--shadow-glow-secondary-lg); }
+
+/* ============================================
+   9. 圆角效果
+   ============================================ */
+.rounded-none { border-radius: var(--radius-none); }
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded { border-radius: var(--radius-base); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-2xl { border-radius: var(--radius-2xl); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* ============================================
+   10. 响应式断点
+   ============================================ */
+/* 移动端优先 */
+/* 默认样式适用于 < 640px */
+
+/* 小屏幕 (sm) >= 640px */
+@media (min-width: 640px) {
+    .sm\:hidden { display: none; }
+    .sm\:block { display: block; }
+    .sm\:flex { display: flex; }
+    .sm\:grid { display: grid; }
+}
+
+/* 中等屏幕 (md) >= 768px */
+@media (min-width: 768px) {
+    .md\:hidden { display: none; }
+    .md\:block { display: block; }
+    .md\:flex { display: flex; }
+    .md\:grid { display: grid; }
+}
+
+/* 大屏幕 (lg) >= 1024px */
+@media (min-width: 1024px) {
+    .lg\:hidden { display: none; }
+    .lg\:block { display: block; }
+    .lg\:flex { display: flex; }
+    .lg\:grid { display: grid; }
+}
+
+/* 超大屏幕 (xl) >= 1280px */
+@media (min-width: 1280px) {
+    .xl\:hidden { display: none; }
+    .xl\:block { display: block; }
+    .xl\:flex { display: flex; }
+    .xl\:grid { display: grid; }
+}
+
+/* 2K屏幕 (2xl) >= 1536px */
+@media (min-width: 1536px) {
+    .xxl\:hidden { display: none; }
+    .xxl\:block { display: block; }
+    .xxl\:flex { display: flex; }
+    .xxl\:grid { display: grid; }
+}
+
+/* ============================================
+   11. 容器
+   ============================================ */
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-4);
+    padding-right: var(--spacing-4);
+}
+
+@media (min-width: 640px) {
+    .container { max-width: var(--container-sm); }
+}
+
+@media (min-width: 768px) {
+    .container { max-width: var(--container-md); }
+}
+
+@media (min-width: 1024px) {
+    .container { max-width: var(--container-lg); }
+}
+
+@media (min-width: 1280px) {
+    .container { max-width: var(--container-xl); }
+}
+
+@media (min-width: 1536px) {
+    .container { max-width: var(--container-2xl); }
+}
+
+/* ============================================
+   12. 动画关键帧
+   ============================================ */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================
+   13. 动画工具类
+   ============================================ */
+.animate-fadeIn { animation: fadeIn var(--transition-base) var(--ease-out); }
+.animate-fadeInUp { animation: fadeInUp var(--transition-base) var(--ease-out); }
+.animate-fadeInDown { animation: fadeInDown var(--transition-base) var(--ease-out); }
+.animate-fadeInLeft { animation: fadeInLeft var(--transition-base) var(--ease-out); }
+.animate-fadeInRight { animation: fadeInRight var(--transition-base) var(--ease-out); }
+.animate-scaleIn { animation: scaleIn var(--transition-base) var(--ease-out); }
+.animate-float { animation: float 3s var(--ease-in-out) infinite; }
+.animate-pulse { animation: pulse 2s var(--ease-in-out) infinite; }
+.animate-spin { animation: spin 1s linear infinite; }
+
+/* ============================================
+   14. 过渡效果
+   ============================================ */
+.transition {
+    transition: all var(--transition-base) var(--ease-in-out);
+}
+
+.transition-fast {
+    transition: all var(--transition-fast) var(--ease-in-out);
+}
+
+.transition-slow {
+    transition: all var(--transition-slow) var(--ease-in-out);
+}
+
+/* ============================================
+   15. 性能优化
+   ============================================ */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
