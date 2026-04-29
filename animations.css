@@ -1,0 +1,634 @@
+/* 🎯 小鸡AI营销系统 - 动画效果 */
+/* 第9步：动画效果系统 */
+
+/* ============================================
+   1. 滚动动画 - 淡入上移
+   ============================================ */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 滚动动画延迟 */
+.scroll-animate-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.scroll-animate-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.scroll-animate-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.scroll-animate-delay-4 {
+    transition-delay: 0.4s;
+}
+
+.scroll-animate-delay-5 {
+    transition-delay: 0.5s;
+}
+
+/* 滚动动画方向变体 */
+.scroll-animate-left {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.scroll-animate-left.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-animate-right {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.scroll-animate-right.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-animate-down {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.scroll-animate-down.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-animate-scale {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.scroll-animate-scale.animate-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ============================================
+   2. 视差效果
+   ============================================ */
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-element {
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+}
+
+/* 视差强度 */
+.parallax-light {
+    /* 由JS控制，轻微移动 */
+}
+
+.parallax-medium {
+    /* 由JS控制，中等移动 */
+}
+
+.parallax-strong {
+    /* 由JS控制，强烈移动 */
+}
+
+/* 3D视差效果 */
+.parallax-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.parallax-3d-layer {
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+}
+
+/* ============================================
+   3. 按钮动画 - 脉冲效果
+   ============================================ */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.btn-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.btn-pulse-ring {
+    position: relative;
+    overflow: visible;
+}
+
+.btn-pulse-ring::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    border: 2px solid currentColor;
+    animation: pulse-ring 1.5s ease-out infinite;
+}
+
+/* ============================================
+   4. 按钮动画 - 水波纹效果
+   ============================================ */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   5. 按钮动画 - Hover效果
+   ============================================ */
+.btn-hover-lift {
+    transition: all 0.3s ease;
+}
+
+.btn-hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
+}
+
+.btn-hover-glow {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.btn-hover-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: inherit;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.btn-hover-glow:hover::before {
+    opacity: 0.8;
+}
+
+.btn-hover-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hover-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-hover-shine:hover::after {
+    left: 100%;
+}
+
+.btn-hover-bounce {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.btn-hover-bounce:hover {
+    transform: scale(1.1);
+}
+
+/* ============================================
+   6. 文字动画 - 渐变色流动
+   ============================================ */
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.text-gradient-flow {
+    background: linear-gradient(
+        90deg,
+        #00ff88,
+        #00d4ff,
+        #a29bfe,
+        #00ff88
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-flow 3s ease infinite;
+}
+
+.text-gradient-flow-fast {
+    animation: gradient-flow 1.5s ease infinite;
+}
+
+.text-gradient-flow-slow {
+    animation: gradient-flow 6s ease infinite;
+}
+
+/* ============================================
+   7. 文字动画 - 数字滚动
+   ============================================ */
+.counter {
+    font-variant-numeric: tabular-nums;
+    transition: all 0.3s ease;
+}
+
+.counter-animate {
+    display: inline-block;
+    animation: counter-pop 0.3s ease;
+}
+
+@keyframes counter-pop {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* ============================================
+   8. 文字动画 - 打字机效果
+   ============================================ */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--color-primary, #00ff88);
+    }
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--color-primary, #00ff88);
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* ============================================
+   9. 文字动画 - 字符淡入
+   ============================================ */
+@keyframes char-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-char-animate span {
+    display: inline-block;
+    opacity: 0;
+    animation: char-fade-in 0.5s ease forwards;
+}
+
+/* 为每个字符设置延迟 */
+.text-char-animate span:nth-child(1) { animation-delay: 0.05s; }
+.text-char-animate span:nth-child(2) { animation-delay: 0.1s; }
+.text-char-animate span:nth-child(3) { animation-delay: 0.15s; }
+.text-char-animate span:nth-child(4) { animation-delay: 0.2s; }
+.text-char-animate span:nth-child(5) { animation-delay: 0.25s; }
+.text-char-animate span:nth-child(6) { animation-delay: 0.3s; }
+.text-char-animate span:nth-child(7) { animation-delay: 0.35s; }
+.text-char-animate span:nth-child(8) { animation-delay: 0.4s; }
+.text-char-animate span:nth-child(9) { animation-delay: 0.45s; }
+.text-char-animate span:nth-child(10) { animation-delay: 0.5s; }
+
+/* ============================================
+   10. 卡片动画 - 翻转效果
+   ============================================ */
+.card-flip {
+    perspective: 1000px;
+}
+
+.card-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-flip:hover .card-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.card-flip-front,
+.card-flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-flip-back {
+    transform: rotateY(180deg);
+}
+
+/* ============================================
+   11. 卡片动画 - 悬浮效果
+   ============================================ */
+@keyframes float-up-down {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.card-float {
+    animation: float-up-down 3s ease-in-out infinite;
+}
+
+.card-float-slow {
+    animation: float-up-down 6s ease-in-out infinite;
+}
+
+/* ============================================
+   12. 背景动画 - 渐变移动
+   ============================================ */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bg-gradient-animate {
+    background: linear-gradient(
+        -45deg,
+        #0a0e27,
+        #1a1f3a,
+        #0a0e27,
+        #050814
+    );
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+}
+
+/* ============================================
+   13. 背景动画 - 粒子效果
+   ============================================ */
+@keyframes particle-float {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100px, -100px);
+        opacity: 0;
+    }
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--color-primary, #00ff88);
+    border-radius: 50%;
+    animation: particle-float 10s ease-in-out infinite;
+}
+
+/* ============================================
+   14. 加载动画 - 骨架屏
+   ============================================ */
+@keyframes skeleton-loading {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05) 0px,
+        rgba(255, 255, 255, 0.1) 40px,
+        rgba(255, 255, 255, 0.05) 80px
+    );
+    background-size: 200px 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   15. 进度条动画
+   ============================================ */
+@keyframes progress-bar {
+    0% {
+        width: 0%;
+    }
+}
+
+.progress-bar {
+    height: 4px;
+    background: var(--color-primary, #00ff88);
+    border-radius: 2px;
+    animation: progress-bar 2s ease-out forwards;
+}
+
+.progress-bar-glow {
+    box-shadow: 0 0 10px var(--color-primary, #00ff88);
+}
+
+/* ============================================
+   16. 图标动画
+   ============================================ */
+@keyframes icon-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes icon-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes icon-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.icon-bounce {
+    animation: icon-bounce 2s ease-in-out infinite;
+}
+
+.icon-spin {
+    animation: icon-spin 2s linear infinite;
+}
+
+.icon-pulse {
+    animation: icon-pulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   17. 鼠标跟随光标效果
+   ============================================ */
+.cursor-glow {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(0, 255, 136, 0.5) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+
+/* ============================================
+   18. 页面过渡动画
+   ============================================ */
+@keyframes page-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes page-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-transition-fade {
+    animation: page-fade-in 0.5s ease;
+}
+
+.page-transition-slide {
+    animation: page-slide-up 0.5s ease;
+}
+
+/* ============================================
+   19. 性能优化
+   ============================================ */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+.gpu-accelerate {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* ============================================
+   20. 减少动画（尊重用户偏好）
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
