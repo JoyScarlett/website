@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 小鸡AI营销系统 - 数据看板</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- 顶部导航 -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🐔</span>
+                    <span class="logo-text">小鸡AI 数据看板</span>
+                </div>
+                <div class="header-actions">
+                    <button class="refresh-btn" id="refreshBtn">
+                        <span>🔄</span>
+                        <span>刷新数据</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主内容区 -->
+        <main class="dashboard-main">
+            <!-- 统计卡片 -->
+            <section class="stats-section">
+                <h2 class="section-title">📊 总体数据</h2>
+                <div class="stats-grid">
+                    <div class="stat-card glass-effect">
+                        <div class="stat-icon">👆</div>
+                        <div class="stat-content">
+                            <div class="stat-label">总点击数</div>
+                            <div class="stat-value" id="totalClicks">-</div>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-effect">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-content">
+                            <div class="stat-label">独立访客</div>
+                            <div class="stat-value" id="uniqueVisitors">-</div>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-effect">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <div class="stat-label">按钮数量</div>
+                            <div class="stat-value" id="uniqueButtons">-</div>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-effect">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-content">
+                            <div class="stat-label">今日点击</div>
+                            <div class="stat-value" id="todayClicks">-</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 按钮排行榜 -->
+            <section class="ranking-section">
+                <h2 class="section-title">🏆 按钮点击排行</h2>
+                <div class="ranking-container glass-effect">
+                    <div class="table-wrapper">
+                        <table class="ranking-table">
+                            <thead>
+                                <tr>
+                                    <th>排名</th>
+                                    <th>按钮名称</th>
+                                    <th>点击次数</th>
+                                    <th>独立访客</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rankingTableBody">
+                                <tr>
+                                    <td colspan="4" class="loading-cell">加载中...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 来源统计 -->
+            <section class="source-section">
+                <h2 class="section-title">🌐 访客来源统计</h2>
+                <div class="source-container glass-effect">
+                    <div class="table-wrapper">
+                        <table class="source-table">
+                            <thead>
+                                <tr>
+                                    <th>来源</th>
+                                    <th>媒介</th>
+                                    <th>点击数</th>
+                                    <th>访客数</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sourceTableBody">
+                                <tr>
+                                    <td colspan="4" class="loading-cell">加载中...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 最近7天趋势 -->
+            <section class="trend-section">
+                <h2 class="section-title">📅 最近7天趋势</h2>
+                <div class="trend-container glass-effect">
+                    <div class="trend-chart" id="trendChart">
+                        <div class="loading-cell">加载中...</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="dashboard-footer">
+            <p>最后更新时间: <span id="lastUpdate">-</span></p>
+        </footer>
+    </div>
+
+    <!-- 加载配置和脚本 -->
+    <script src="config.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
