@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画效果演示 - 小鸡AI营销系统</title>
+    
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="utilities.css">
+    <link rel="stylesheet" href="animations.css">
+    
+    <style>
+        /* 演示页面专用样式 */
+        body {
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            padding: var(--spacing-8) var(--spacing-4);
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            margin-bottom: var(--spacing-16);
+            padding: var(--spacing-8);
+            background: var(--color-bg-secondary);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+        }
+        
+        .demo-section h2 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-6);
+            font-size: var(--font-size-2xl);
+        }
+        
+        .demo-section p {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-4);
+            margin-top: var(--spacing-4);
+        }
+        
+        .demo-box {
+            padding: var(--spacing-6);
+            background: var(--color-bg-tertiary);
+            border-radius: var(--radius-md);
+            text-align: center;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .parallax-demo {
+            height: 400px;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parallax-demo img {
+            max-width: 300px;
+            filter: drop-shadow(0 0 30px rgba(0, 255, 136, 0.5));
+        }
+        
+        .counter-demo {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-4);
+        }
+        
+        .card-demo {
+            height: 200px;
+            background: var(--color-bg-tertiary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-6);
+        }
+        
+        .progress-demo {
+            margin-top: var(--spacing-4);
+        }
+        
+        .icon-demo {
+            font-size: 48px;
+            display: inline-block;
+            margin: var(--spacing-4);
+        }
+        
+        .particle-demo {
+            height: 300px;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <!-- 标题 -->
+        <header class="text-center mb-8">
+            <h1 class="text-gradient-flow" style="font-size: 48px; margin-bottom: 16px;">
+                🎨 动画效果演示
+            </h1>
+            <p class="text-secondary">小鸡AI营销系统 - 第9步：动画效果系统</p>
+        </header>
+        
+        <!-- 1. 滚动动画 -->
+        <section class="demo-section">
+            <h2>1️⃣ 滚动动画 - 淡入上移</h2>
+            <p>向下滚动页面，观察元素进入视口时的动画效果</p>
+            
+            <div class="demo-grid">
+                <div class="demo-box scroll-animate">
+                    <div>淡入上移</div>
+                </div>
+                <div class="demo-box scroll-animate scroll-animate-delay-1">
+                    <div>延迟 0.1s</div>
+                </div>
+                <div class="demo-box scroll-animate scroll-animate-delay-2">
+                    <div>延迟 0.2s</div>
+                </div>
+                <div class="demo-box scroll-animate scroll-animate-delay-3">
+                    <div>延迟 0.3s</div>
+                </div>
+            </div>
+            
+            <div class="demo-grid mt-4">
+                <div class="demo-box scroll-animate-left">
+                    <div>从左侧进入</div>
+                </div>
+                <div class="demo-box scroll-animate-right">
+                    <div>从右侧进入</div>
+                </div>
+                <div class="demo-box scroll-animate-down">
+                    <div>从上方进入</div>
+                </div>
+                <div class="demo-box scroll-animate-scale">
+                    <div>缩放进入</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 2. 视差效果 -->
+        <section class="demo-section">
+            <h2>2️⃣ 视差效果 - 鼠标跟随</h2>
+            <p>移动鼠标，观察图片跟随效果</p>
+            
+            <div class="parallax-demo parallax-container">
+                <div class="parallax-element parallax-medium">
+                    <div style="font-size: 120px;">🚀</div>
+                </div>
+            </div>
+            
+            <div class="demo-grid mt-4">
+                <div class="parallax-container" style="height: 200px; background: var(--color-bg-tertiary); border-radius: var(--radius-md);">
+                    <div class="parallax-element parallax-light" style="font-size: 48px;">
+                        💡 轻微
+                    </div>
+                </div>
+                <div class="parallax-container" style="height: 200px; background: var(--color-bg-tertiary); border-radius: var(--radius-md);">
+                    <div class="parallax-element parallax-medium" style="font-size: 48px;">
+                        ⚡ 中等
+                    </div>
+                </div>
+                <div class="parallax-container" style="height: 200px; background: var(--color-bg-tertiary); border-radius: var(--radius-md);">
+                    <div class="parallax-element parallax-strong" style="font-size: 48px;">
+                        🔥 强烈
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. 按钮动画 - 脉冲 -->
+        <section class="demo-section">
+            <h2>3️⃣ 按钮动画 - 脉冲效果</h2>
+            <p>观察按钮的脉冲动画</p>
+            
+            <div class="button-grid">
+                <button class="btn btn-primary btn-pulse">
+                    脉冲按钮
+                </button>
+                <button class="btn btn-primary btn-pulse-ring">
+                    脉冲光环
+                </button>
+            </div>
+        </section>
+        
+        <!-- 4. 按钮动画 - 水波纹 -->
+        <section class="demo-section">
+            <h2>4️⃣ 按钮动画 - 水波纹效果</h2>
+            <p>点击按钮，观察水波纹扩散效果</p>
+            
+            <div class="button-grid">
+                <button class="btn btn-primary btn-ripple">
+                    点击我 - 水波纹
+                </button>
+                <button class="btn btn-secondary btn-ripple">
+                    点击我 - 水波纹
+                </button>
+                <button class="btn btn-accent btn-ripple">
+                    点击我 - 水波纹
+                </button>
+            </div>
+        </section>
+        
+        <!-- 5. 按钮动画 - Hover效果 -->
+        <section class="demo-section">
+            <h2>5️⃣ 按钮动画 - Hover效果</h2>
+            <p>鼠标悬停在按钮上，观察不同的hover效果</p>
+            
+            <div class="button-grid">
+                <button class="btn btn-primary btn-hover-lift">
+                    上浮效果
+                </button>
+                <button class="btn btn-primary btn-hover-glow">
+                    发光效果
+                </button>
+                <button class="btn btn-primary btn-hover-shine">
+                    闪光效果
+                </button>
+                <button class="btn btn-primary btn-hover-bounce">
+                    弹跳效果
+                </button>
+            </div>
+        </section>
+        
+        <!-- 6. 文字动画 - 渐变流动 -->
+        <section class="demo-section">
+            <h2>6️⃣ 文字动画 - 渐变色流动</h2>
+            <p>观察文字颜色的流动效果</p>
+            
+            <div class="text-center">
+                <h3 class="text-gradient-flow" style="font-size: 36px; margin-bottom: 16px;">
+                    小鸡AI营销系统
+                </h3>
+                <p class="text-gradient-flow-fast" style="font-size: 24px; margin-bottom: 16px;">
+                    快速流动效果
+                </p>
+                <p class="text-gradient-flow-slow" style="font-size: 24px;">
+                    慢速流动效果
+                </p>
+            </div>
+        </section>
+        
+        <!-- 7. 文字动画 - 数字滚动 -->
+        <section class="demo-section">
+            <h2>7️⃣ 文字动画 - 数字滚动</h2>
+            <p>滚动到此处，观察数字从0增长到目标值</p>
+            
+            <div class="demo-grid">
+                <div class="demo-box">
+                    <div>
+                        <div class="counter-demo counter" data-target="12580">0</div>
+                        <p class="mt-2">总用户数</p>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <div>
+                        <div class="counter-demo counter" data-target="8888">0</div>
+                        <p class="mt-2">活跃用户</p>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <div>
+                        <div class="counter-demo counter" data-target="99">0</div>
+                        <p class="mt-2">转化率 %</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 8. 文字动画 - 字符淡入 -->
+        <section class="demo-section">
+            <h2>8️⃣ 文字动画 - 字符逐个淡入</h2>
+            <p>每个字符依次淡入显示</p>
+            
+            <div class="text-center">
+                <h3 class="text-char-animate" style="font-size: 32px; color: var(--color-primary);">
+                    欢迎使用小鸡AI营销系统
+                </h3>
+            </div>
+        </section>
+        
+        <!-- 9. 卡片动画 - 悬浮 -->
+        <section class="demo-section">
+            <h2>9️⃣ 卡片动画 - 悬浮效果</h2>
+            <p>观察卡片的上下浮动动画</p>
+            
+            <div class="demo-grid">
+                <div class="card-demo card-float scroll-animate">
+                    <h4 style="color: var(--color-primary);">普通速度</h4>
+                    <p class="mt-2">上下浮动动画</p>
+                </div>
+                <div class="card-demo card-float-slow scroll-animate scroll-animate-delay-1">
+                    <h4 style="color: var(--color-secondary);">慢速浮动</h4>
+                    <p class="mt-2">更缓慢的浮动</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 10. 进度条动画 -->
+        <section class="demo-section">
+            <h2>🔟 进度条动画</h2>
+            <p>观察进度条的填充动画</p>
+            
+            <div class="progress-demo">
+                <p class="mb-2">技能等级：HTML/CSS</p>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                    <div class="progress-bar progress-bar-glow" style="--progress: 90%;"></div>
+                </div>
+                
+                <p class="mb-2 mt-4">技能等级：JavaScript</p>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                    <div class="progress-bar progress-bar-glow" style="--progress: 85%; animation-delay: 0.2s;"></div>
+                </div>
+                
+                <p class="mb-2 mt-4">技能等级：设计</p>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                    <div class="progress-bar progress-bar-glow" style="--progress: 75%; animation-delay: 0.4s;"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 11. 图标动画 -->
+        <section class="demo-section">
+            <h2>1️⃣1️⃣ 图标动画</h2>
+            <p>观察图标的各种动画效果</p>
+            
+            <div class="text-center">
+                <span class="icon-demo icon-bounce">⬇️</span>
+                <span class="icon-demo icon-spin">⚙️</span>
+                <span class="icon-demo icon-pulse">❤️</span>
+            </div>
+        </section>
+        
+        <!-- 12. 粒子效果 -->
+        <section class="demo-section">
+            <h2>1️⃣2️⃣ 粒子效果</h2>
+            <p>观察背景粒子的浮动效果</p>
+            
+            <div class="particle-demo" id="particleContainer">
+                <div style="position: relative; z-index: 1; text-align: center; padding-top: 120px;">
+                    <h3 style="font-size: 36px; color: var(--color-primary);">粒子背景</h3>
+                    <p class="mt-2">科技感十足</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 13. 骨架屏加载 -->
+        <section class="demo-section">
+            <h2>1️⃣3️⃣ 骨架屏加载动画</h2>
+            <p>模拟内容加载时的占位效果</p>
+            
+            <div class="demo-grid">
+                <div class="demo-box">
+                    <div style="width: 100%;">
+                        <div class="skeleton" style="height: 20px; margin-bottom: 8px; border-radius: 4px;"></div>
+                        <div class="skeleton" style="height: 20px; width: 80%; margin-bottom: 8px; border-radius: 4px;"></div>
+                        <div class="skeleton" style="height: 20px; width: 60%; border-radius: 4px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 底部说明 -->
+        <footer class="text-center mt-16 scroll-animate">
+            <p class="text-secondary">🎉 所有动画效果演示完毕</p>
+            <p class="text-secondary mt-2">第9步：动画效果系统 ✅</p>
+        </footer>
+    </div>
+    
+    <!-- 引入脚本 -->
+    <script src="animations.js"></script>
+    <script>
+        // 初始化动画控制器
+        const animationController = new AnimationController({
+            debug: true, // 开启调试模式
+            scrollThreshold: 0.1,
+            parallaxLight: 0.02,
+            parallaxMedium: 0.05,
+            parallaxStrong: 0.1
+        });
+        
+        // 初始化所有动画
+        animationController.initAll();
+        
+        // 创建粒子效果
+        animationController.createParticles('#particleContainer', 30);
+        
+        // 页面加载完成提示
+        window.addEventListener('load', () => {
+            console.log('🎨 动画演示页面加载完成');
+            console.log('💡 提示：');
+            console.log('  - 向下滚动查看滚动动画');
+            console.log('  - 移动鼠标体验视差效果');
+            console.log('  - 点击按钮查看水波纹');
+            console.log('  - 悬停按钮查看hover效果');
+        });
+    </script>
+</body>
+</html>
