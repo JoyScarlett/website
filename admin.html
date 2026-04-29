@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 小鸡AI营销系统 - 后台管理</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- 左侧菜单 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🐔</span>
+                    <span class="logo-text">后台管理</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-section="nav">
+                    <span class="nav-icon">🧭</span>
+                    <span class="nav-text">导航栏</span>
+                </button>
+                <button class="nav-item" data-section="hero">
+                    <span class="nav-icon">🎯</span>
+                    <span class="nav-text">Hero区</span>
+                </button>
+                <button class="nav-item" data-section="features">
+                    <span class="nav-icon">⚡</span>
+                    <span class="nav-text">功能区</span>
+                </button>
+                <button class="nav-item" data-section="cases">
+                    <span class="nav-icon">🏆</span>
+                    <span class="nav-text">案例区</span>
+                </button>
+                <button class="nav-item" data-section="footer">
+                    <span class="nav-icon">📄</span>
+                    <span class="nav-text">页脚</span>
+                </button>
+            </nav>
+            
+            <div class="sidebar-actions">
+                <button class="action-btn export-btn" id="exportBtn">
+                    <span>📥</span>
+                    <span>导出数据</span>
+                </button>
+                <button class="action-btn import-btn" id="importBtn">
+                    <span>📤</span>
+                    <span>导入数据</span>
+                </button>
+                <button class="action-btn reset-btn" id="resetBtn">
+                    <span>🔄</span>
+                    <span>重置数据</span>
+                </button>
+                <input type="file" id="importFile" accept=".json" style="display: none;">
+            </div>
+        </aside>
+
+        <!-- 右侧编辑区 -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1 class="content-title" id="contentTitle">导航栏设置</h1>
+                <div class="header-actions">
+                    <button class="preview-btn" id="previewBtn">
+                        <span>👁️</span>
+                        <span>预览官网</span>
+                    </button>
+                    <button class="save-btn" id="saveBtn">
+                        <span>💾</span>
+                        <span>保存更改</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="content-body" id="contentBody">
+                <!-- 动态渲染编辑表单 -->
+            </div>
+
+            <!-- 保存提示 -->
+            <div class="toast" id="toast">
+                <span class="toast-icon">✅</span>
+                <span class="toast-text">保存成功！</span>
+            </div>
+        </main>
+    </div>
+
+    <!-- 加载脚本 -->
+    <script src="content-manager.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
