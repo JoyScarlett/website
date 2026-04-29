@@ -3,128 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>项目导航 - Website</title>
-    <link rel="stylesheet" href="design-system.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .container {
-            max-width: 1200px;
-            padding: 40px 20px;
-        }
-        .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 50px;
-        }
-        .header h1 {
-            font-size: 3em;
-            margin: 0 0 10px 0;
-            font-weight: 700;
-        }
-        .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .card {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-        }
-        .card-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-        }
-        .card h2 {
-            margin: 0 0 10px 0;
-            color: #333;
-            font-size: 1.5em;
-        }
-        .card p {
-            margin: 0;
-            color: #666;
-            line-height: 1.6;
-        }
-        .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.85em;
-            margin-top: 10px;
-            font-weight: 500;
-        }
-        .badge-primary { background: #e3f2fd; color: #1976d2; }
-        .badge-success { background: #e8f5e9; color: #388e3c; }
-        .badge-warning { background: #fff3e0; color: #f57c00; }
-        .badge-info { background: #f3e5f5; color: #7b1fa2; }
-    </style>
+    <meta name="description" content="小鸡AI营销系统 - 智能营销解决方案">
+    <title>🎯 小鸡AI营销系统 - PC官网</title>
+    <link rel="stylesheet" href="pc.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🚀 项目导航</h1>
-            <p>选择你要访问的功能模块</p>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" id="navLogo">
+                <!-- 动态渲染 -->
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <!-- 动态渲染 -->
+            </ul>
+            <div class="nav-cta">
+                <button class="nav-btn" data-button="nav-contact" id="navCtaBtn">
+                    <!-- 动态渲染 -->
+                </button>
+            </div>
+            <!-- 移动端菜单按钮 -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        
-        <div class="grid">
-            <a href="dashboard.html" class="card">
-                <div class="card-icon">📊</div>
-                <h2>仪表盘</h2>
-                <p>查看系统概览、数据统计和关键指标</p>
-                <span class="badge badge-primary">核心功能</span>
-            </a>
-            
-            <a href="admin.html" class="card">
-                <div class="card-icon">⚙️</div>
-                <h2>管理后台</h2>
-                <p>系统管理、用户管理和配置设置</p>
-                <span class="badge badge-warning">管理员</span>
-            </a>
-            
-            <a href="analytics.html" class="card">
-                <div class="card-icon">📈</div>
-                <h2>数据分析</h2>
-                <p>深度数据分析、报表生成和趋势预测</p>
-                <span class="badge badge-success">分析工具</span>
-            </a>
-            
-            <a href="design-system-demo.html" class="card">
-                <div class="card-icon">🎨</div>
-                <h2>设计系统</h2>
-                <p>UI 组件库、设计规范和样式指南</p>
-                <span class="badge badge-info">开发工具</span>
-            </a>
-            
-            <a href="animations-demo.html" class="card">
-                <div class="card-icon">✨</div>
-                <h2>动画演示</h2>
-                <p>交互动画效果和视觉设计展示</p>
-                <span class="badge badge-info">演示</span>
-            </a>
+    </nav>
+
+    <!-- Hero区 -->
+    <section class="hero-section" id="heroSection">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" id="heroTitle">
+                    <!-- 动态渲染 -->
+                </h1>
+                <p class="hero-subtitle" id="heroSubtitle">
+                    <!-- 动态渲染 -->
+                </p>
+                <div class="hero-buttons" id="heroButtons">
+                    <!-- 动态渲染 -->
+                </div>
+            </div>
+            <div class="hero-visual" id="heroVisual">
+                <!-- 动态渲染 -->
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- 功能区 -->
+    <section class="features-section" id="featuresSection">
+        <div class="features-container">
+            <h2 class="section-title" id="featuresTitle">
+                <!-- 动态渲染 -->
+            </h2>
+            <p class="section-subtitle" id="featuresSubtitle">
+                <!-- 动态渲染 -->
+            </p>
+            <div class="features-grid" id="featuresGrid">
+                <!-- 动态渲染 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例区 -->
+    <section class="cases-section" id="casesSection">
+        <div class="cases-container">
+            <h2 class="section-title" id="casesTitle">
+                <!-- 动态渲染 -->
+            </h2>
+            <p class="section-subtitle" id="casesSubtitle">
+                <!-- 动态渲染 -->
+            </p>
+            <div class="cases-grid" id="casesGrid">
+                <!-- 动态渲染 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-content" id="footerContent">
+                <!-- 动态渲染 -->
+            </div>
+            <div class="footer-bottom" id="footerBottom">
+                <!-- 动态渲染 -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- 第11步：域名跳转（最先加载） -->
+    <script src="domain-config.js"></script>
+    <script src="domain-router.js"></script>
+    
+    <!-- 加载脚本 -->
+    <script src="config.js"></script>
+    <script src="content-manager.js"></script>
+    <script src="tracker.js"></script>
+    <script src="pc.js"></script>
 </body>
 </html>
